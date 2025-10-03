@@ -49,4 +49,13 @@
 #![allow(non_snake_case)]
 #![allow(dead_code)]
 
+impl HermesABIString {
+    pub fn new(value: *mut HermesABIManagedPointer) -> Self {
+        HermesABIString {
+            pointer: value,
+            _unused: []
+        }
+    }
+}
+
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
